@@ -1,0 +1,20 @@
+// All'indirizzo X e' memorizzata la lunghezza di un vettore. 
+// Calcola la somma dei numeri pari del vettore a partire dall'indirizzo di memoria X+1, e restituiscila nell'accumulatore.
+
+IRx -> MAR;
+M[MAR] -> MBR;
+MBR -> T1;   // T1: lunghezza del vettore
+0 -> B;    // B: contiene la somma
+INC(MAR) -> MAR; // MAR punta al primo elemento del vettore
+c1: if (OR(T1) == 1) then // tutta la lunghezza del vettore
+      M[MAR] -> MBR; 
+      if (MBR_0 == 0) then
+        MBR -> A;
+        A + B -> B;
+      else
+      fi 
+      INC(MAR) -> MAR; // MAR punta al prossimo elemento
+      DEC(T1) -> T1, goto c1;
+else
+fi
+B -> ACC;
