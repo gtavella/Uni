@@ -1,0 +1,15 @@
+// Moltiplica il contenuto all'indirizzo X per il contenuto all'indirizzo X+1
+// Strategia: somma {A+A+...+A} B volte
+IRx -> MAR;
+M[MAR] -> MBR;
+MBR -> A, INC(MAR) -> MAR;
+MBR -> B;
+M[MAR] -> MBR;
+MBR -> T1;
+DEC(T1) -> T1; // perche' sto gia' per fare A + B = 2A
+c: if (OR(T1)==1) then
+     A + B -> B;
+     DEC(T1) -> T1, goto c;
+   else
+   fi
+B -> ACC;
