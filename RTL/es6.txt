@@ -14,7 +14,7 @@ c1: if(T1_31==0) then // posso modificare questo segnale beta? Cioe' B -> T1
      A -> T2;
      B -> A;
    fi
-DEC(T2) -> T2; // perche' nei registri A + B = 2A o 2B
+DEC(T2) -> T2; // perche' prima A=B quindi A+B=2A ancora prima dell'iterazione
 c2: if(OR(T2)==1) then
       A + B -> B;
       DEC(T2) -> T2, goto c2;
