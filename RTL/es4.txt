@@ -1,0 +1,12 @@
+// Moltiplica per 6 il contenuto all'indirizzo X, salva il risultato nell'indirizzo X+1.
+// Strategia: 6x = 4x + 2x
+IRx -> MAR;
+M[MAR] -> MBR;
+MBR -> T1, INC(MAR) -> MAR;
+MBR -> A; SHL(T1) -> T1;
+SHL(T1) -> T1;
+T1 -> B; // 4x
+A + B -> B; // 5x
+A + B -> T1 // 6x
+T1 -> MBR;
+MBR -> M[MAR];
