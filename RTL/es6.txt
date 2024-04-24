@@ -19,7 +19,3 @@ c2: if(OR(T2)==1) then
     else
     fi
 B -> ACC;
-
-
-
-// Aggiorna gli elementi di un vettore a partire da x+1, la cui lunghezza e' memorizzata all'indirizzo X, con il loro doppio.
