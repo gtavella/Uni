@@ -1,0 +1,25 @@
+// Moltiplica il contenuto all'indirizzo X per il contenuto all'indirizzo X+1. Sia A = M[X] e B = M[X+1], ottimizza l'algoritmo trovando il minimo tra A e B, ad esempio se B<A, e' piu' efficiente sommare A B volte che sommare B A volte.
+IRx -> MAR;
+M[MAR] -> MBR;
+MBR -> A, INC(MAR) -> MAR;
+M[MAR] -> MBR;
+MBR -> B;
+A - B -> T1;   // visto che A-B>=0 == A>=B, allora B e' il contatore, altrimenti A. Se sono uguali e' indifferente quali dei due
+c1: if(T1_31==0) then // posso modificare questo segnale beta? Cioe' B -> T1
+     B -> T2;   // T2 conta quante volte aggiungere A o B piu' se stesso, {A+A+...+A} B volte o {B+B+...+B} A volte
+     A -> B;
+   else 
+     A -> T2;
+     B -> A;
+   fi
+DEC(T2) -> T2; // perche' nei registri A + B = 2A o 2B
+c2: if(OR(T2)==1) then
+      A + B -> B;
+      DEC(T2) -> T2, goto c2;
+    else
+    fi
+B -> ACC;
+
+
+
+// Aggiorna gli elementi di un vettore a partire da x+1, la cui lunghezza e' memorizzata all'indirizzo X, con il loro doppio.
