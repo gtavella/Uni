@@ -1,4 +1,6 @@
-// Moltiplica il contenuto all'indirizzo X per il contenuto all'indirizzo X+1. Sia A = M[X] e B = M[X+1], ottimizza l'algoritmo trovando il minimo tra A e B, ad esempio se B<A, e' piu' efficiente sommare A B volte che sommare B A volte.
+// Moltiplica il contenuto all'indirizzo X per il contenuto all'indirizzo X+1. 
+// Sia A = M[X] e B = M[X+1], ottimizza l'algoritmo trovando il minimo tra A e B, ad esempio se B<A, 
+// e' piu' efficiente sommare A B volte che sommare B A volte.
 IRx -> MAR;
 M[MAR] -> MBR;
 MBR -> A, INC(MAR) -> MAR;
