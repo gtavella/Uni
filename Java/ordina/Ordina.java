@@ -37,16 +37,25 @@ public class Ordina {
         return nextMin;
     }
 
-
+    // get a sublist recursive
     public static ArrayList<Integer> sublist(ArrayList<Integer> A, int fromIndex, int toIndex) {
+        if(fromIndex==toIndex) return new ArrayList<>();
         ArrayList<Integer> ret = new ArrayList<>();
-        int i = fromIndex;
-        while(i<toIndex) {
-            ret.add(A.get(i));
-            i++;
-        }
+        ret.add(A.get(fromIndex));
+        ret.addAll(sublist(A, fromIndex+1, toIndex));
         return ret;
     }
+
+    // get a sublist iterative
+//    public static ArrayList<Integer> sublist(ArrayList<Integer> A, int fromIndex, int toIndex) {
+//        ArrayList<Integer> ret = new ArrayList<>();
+//        int i = fromIndex;
+//        while(i<toIndex) {
+//            ret.add(A.get(i));
+//            i++;
+//        }
+//        return ret;
+//    }
 
 
     public static ArrayList<Integer> ordina(ArrayList<Integer> A) {
