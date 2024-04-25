@@ -1,0 +1,29 @@
+// (NON TESTATO)
+
+// Inverti un vettore che parte da X+1, la cui lunghezza e' memorizzata all'indirizzo X. 
+IRx->MAR;
+IRx->IND1;
+M[MAR]->MBR, INC(IND1)->IND1; // IND1 indirizzo dell'elemento attuale nella meta' sinistra
+IND1->A; // A sempre fisso, indirizzo assoluto del vettore
+MBR->T1, INC(MAR)->MAR; // T1 lunghezza
+MBR->T2;
+SHR(T2)->T2;  // T2 meta' della lunghezza
+c: if(OR(T2)==1) then
+     M[MAR]->MBR; 
+     MBR->T3;  // T3 elemento simmetrico a sinistra 
+     T2->B; 
+     A+B->IND2;   // IND2 punta a elemento simmetrico a destra, cioe' aggiungo un offset all'indirizzo assoluto del vettore e ottengo T4
+     IND2->MAR; 
+     M[MAR]->MBR; 
+     MBR->T4;    // T4 elemento simmetrico a destra
+     T3->MBR;
+     MBR->M[MAR]; // aggiornato elemento simmetrico a destra
+     IND1->MAR; // ricarica l'indirizzo da dove avevo saltato
+     T4->MBR; // accorpabili con quello di sopra?
+     MBR->M[MAR]; // aggiornato elemento simmetrico a sinistra
+     INC(IND1)->IND1, INC(MAR)->MAR;
+     DEC(T2)->T2, goto c;
+   else
+   if
+
+
