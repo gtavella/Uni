@@ -1,0 +1,26 @@
+// Dato un vettore memorizzato all'indirizzo X+1, aggiorna gli elementi del vettore che sono dispari aggiungendo il prossimo elemento, solo se il prossimo elemento e' pari. La lunghezza del vettore e' memorizzata all'indirizzo X.
+
+// Strategia: fermati al penultimo, controlla l'ultimo.
+IRx -> MAR;
+M[MAR] -> MBR;
+MBR -> T1, INC(MAR) -> MAR; // T1 e' la lunghezza
+DEC(T1)->T1; // cosi mi fermo al penultimo elemento e controllo l'ultimo
+c: if(OR(T1)==1) then
+      M[MAR] -> MBR;   // elemento corrente
+      MBR -> T2, INC(MAR) -> MAR; // T2 elemento corrente, MAR prossimo elemento
+      if(T2_0==1) then     // elemento corrente dispari
+          M[MAR] -> MBR;     // MBR prossimo elemento
+          if(MBR_0==0) then   // prossimo elemento pari                 
+              T2->A;
+              MBR->B; 
+              A+B->T2;
+              T2->MBR, DEC(MAR)->MAR;
+              MBR->M[MAR];
+              INC(MAR)->MAR;
+          else
+          fi
+      else
+      fi
+      DEC(T1)->T1, goto c;
+   else
+   fi
