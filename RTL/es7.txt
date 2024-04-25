@@ -1,5 +1,5 @@
 // Dato un vettore memorizzato all'indirizzo X+1, aggiorna gli elementi del vettore che sono dispari aggiungendo il prossimo elemento, 
-solo se il prossimo elemento e' pari. La lunghezza del vettore e' memorizzata all'indirizzo X.
+// solo se il prossimo elemento e' pari. La lunghezza del vettore e' memorizzata all'indirizzo X.
 
 // Strategia: fermati al penultimo, controlla l'ultimo.
 IRx -> MAR;
