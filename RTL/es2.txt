@@ -1,16 +1,13 @@
 // All'indirizzo X e' memorizzata la lunghezza di un vettore. 
 // Calcola la somma degli elementi del vettore a partire dall'indirizzo di memoria X+1, e restituiscila nell'accumulatore.
 
-IRx -> MAR;
-M[MAR] -> MBR;
-MBR -> T1;   // T1: lunghezza del vettore
-0 -> B;    // B: contiene la somma
-INC(MAR) -> MAR; 
-c: if (OR(T1) == 1) then // tutta la lunghezza del vettore
-  M[MAR] -> MBR;  
-  MBR -> A; // elemento attuale
-  A + B -> B, INC(MAR) -> MAR; 
-  DEC(T1) -> T1, goto c;
-else
-fi
-B -> ACC;
+IRx->MAR;
+M[MAR]->MBR, 0->B;
+MBR->T1, INC(MAR)->MAR;
+c: if(OR(T1)==1) then
+     M[MAR]->MBR;
+     MBR->A, INC(MAR)->MAR;
+     A+B->B, DEC(T1)->T1, goto c;
+   else
+   fi
+B->ACC;
