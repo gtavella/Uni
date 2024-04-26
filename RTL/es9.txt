@@ -1,4 +1,5 @@
-// Scrivi un microprogramma che estende il repertorio istruzioni con l'istruzione MAX X che trova il massimo di un vettore che parte dall'indirizzo X+1. La lunghezza del vettore e' memorizzata all'indirizzo X.
+// Scrivi un microprogramma che estende il repertorio istruzioni con l'istruzione MAX X che trova il massimo di un vettore che parte dall'indirizzo X+1. 
+// La lunghezza del vettore e' memorizzata all'indirizzo X.
 
 
 IRx->MAR; 
