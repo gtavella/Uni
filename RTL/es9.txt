@@ -1,0 +1,21 @@
+// Scrivi un microprogramma che estende il repertorio istruzioni con l'istruzione MAX X che trova il massimo di un vettore che parte dall'indirizzo X+1. La lunghezza del vettore e' memorizzata all'indirizzo X.
+
+
+IRx->MAR; 
+M[MAR]->MBR, INC(MAR)->MAR;
+MBR->T1, INC(MAR)->MAR;                 // T1 lunghezza
+M[MAR]->MBR;
+MBR->B, INC(MAR)->MAR;                  // B massimo attuale 
+1: if(OR(T1)==1) then
+     M[MAR]->MBR, INC(MAR)->MAR;
+     MBR->A;                            // A elemento attuale
+     A-B->T2;                            
+     if(T2_31==0) then                // A maggiore o uguale del massimo attuale?
+       MBR->B;                         // aggiorna il massimo
+     else
+     fi
+     DEC(T1)->T1, goto 1;
+   else
+     B->ACC;
+   fi
+
