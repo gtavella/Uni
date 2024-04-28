@@ -5,7 +5,8 @@
 IRx->MAR; 
 M[MAR]->MBR, INC(MAR)->MAR;
 MBR->T1, INC(MAR)->MAR;                 // T1 lunghezza
-M[MAR]->MBR, DEC(T1)->T1;
+M[MAR]->MBR, DEC(T1)->T1; 
+DEC(T1)->T1; 
 MBR->B, INC(MAR)->MAR;                  // B massimo attuale 
 1: if(OR(T1)==1) then
      M[MAR]->MBR, INC(MAR)->MAR;
@@ -19,4 +20,3 @@ MBR->B, INC(MAR)->MAR;                  // B massimo attuale
    else
      B->ACC;
    fi
-
